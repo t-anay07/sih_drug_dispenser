@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add your CSS styles for the page here */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fffcfc;
+}
+
+header {
+    background-color: #e3d9ff;
+    color: #380505;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+/* 2nd banner starts here  */
+.landing_br-wrpapper{
+    background-color: #fef7ef;
+}
+
+.landing_center {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.widget-container {
+    padding-top: 12px;
+    padding-bottom: 24px;
+}
+.container-fluid {
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.flock{
+    align-items:center;
+    display: flex;
+    margin-top: 8px;
+}
+
+.col-1 {
+    width: calc(calc(min(100vw, 1440px) - 336px) / 12);
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.col-11 {
+    width: calc(calc(calc(min(100vw, 1440px) - 336px) / 12) * 11 + 24px * 10);
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.bodyMedium {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+.marginTop-4 {
+    margin-top: 12px;
+}
+.textualbutton {
+    background-color: transparent;
+    display: flex;
+    padding: 0;
+    align-items: center;
+    color: #ff6f61;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+/* 2nd banner ends here  */
+
+.search-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input[type="text"], select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+    margin-right: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.doctor-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    
+}
+
+.doctor-card {
+    flex-basis: calc(33.33% - 20px);
+    border: 1px solid #ccc;
+    padding: 2px;
+    border-radius: 5px;
+    /* flex: 1;
+    max-width: 300px; */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.2s; /* Add transition for smooth hover effect */
+    overflow: hidden; 
+}
+
+.doctor-card:hover {
+    transform: scale(1.05); /* Enlarge the card on hover */
+}
+
+.doctor-card img {
+    max-width: 100%;
+    max-height: 150px; /* Set a maximum height for images */
+    border-radius: 50%;
+}
+
+/* Add more styling as needed */
+
+/* here the landing page  */
+.landingPage_feature-wrapper {
+    display: flex;
+    flex-basis: auto;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 2% 4%;
+}
+
+.landingPage_feature-wrapper .landingPage_box{
+    display: flex;
+    flex: 1;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: flex-start;
+    padding: 2%;
+    width: 100%;
+}
+.landingPage_image{
+    height: 100px;
+}
+
+.landingPage_heading {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #616161;
+    padding-top: 40px;
+}
+.landingPage_text{
+    text-align: center;
+    font-size: 16px;
+    color: #616161;
+    padding-top: 10px;
+}
+/* here the landing page ends  */
+
+/* platform info starts  */
+
+.platform-title {
+    font-size: 24px;
+    padding: 24px 0;
+    margin: 0;
+}
+.platform-stats {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* platform info ends  */
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Doctor Appointment Booking</h1>
+    </header>
+    
+    <!-- 2nd banner starts here  -->
+    <div class="landing_br-wrpapper">
+    <div class="landing_center">
+        <div class="container-fluid widget-container">
+            <div class="flock">
+                <div class="col-1">
+                    <img src="images/kuch bhi 2.webp" alt="">
+                </div>
+                <div class="col-11">
+                    <div class="bodymedium">Free Consultation and more benefits with care plan membership</div>
+                    <div class="marginTop-4 flex">
+                        <button class="textualbutton">
+                            "Join Now!"
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- 2nd banner ends here  -->
+
+    <div class="container">
+        <div class="search-filter">
+            <input type="text" id="searchInput" placeholder="Search by name">
+            <select id="specialization">
+                <option value="all">All Specialists</option>
+                <option value="cardiologist">Cardiologist</option>
+                <option value="dentist">Dentist</option>
+                <option value="dermatologist">Dermatologist</option>
+                <!-- Add more specialist options here -->
+            </select>
+            <button id="filterButton">Filter</button>
+        </div>
+
+        <div class="doctor-list">
+            <!-- Doctors will be dynamically populated here -->
+        </div>
+    </div>
+
+    <!-- doctors feature starts here  -->
+<div class="landingPage_feature-wrapper">
+    <div class="landingPage_box">
+        <div class="landingPage_image">
+            <img src="images/confidential.svg" alt="">
+        </div>
+        <div class="landingPage_heading">100% Confidential</div>
+        <div class="landingPage_text">
+            "All advice & consultations are completely confidential. You can also delete chats whenever you want. 
+        </div>
+    </div>
+    <div class="landingPage_box">
+        <div class="landingPage_image">
+            <img src="images/certified.svg" alt="">
+        </div>
+        <div class="landingPage_heading">Certified Doctors</div>
+        <div class="landingPage_text">
+            We offer quality healthcare through our network of certified and experienced doctors. 
+        </div>
+    </div>
+    <div class="landingPage_box">
+        <div class="landingPage_image">
+            <img src="images/convenience.svg" alt="">
+        </div>
+        <div class="landingPage_heading">Convenience</div>
+        <div class="landingPage_text">
+            Forget the hassle of long queues and rush hour. Seek expert opinion anytime, anywhere. 
+        </div>
+    </div>
+    <div class="landingPage_box">
+        <div class="landingPage_image">
+            <img src="images/costEffective.svg" alt="">
+        </div>
+        <div class="landingPage_heading">Cost Effective</div>
+        <div class="landingPage_text">
+            We provide medical assistance on non urgent queries for free. Fee starting at ₹50 for faster response to queries. 
+        </div>
+    </div>
+
+
+
+</div>
+
+
+    <!-- doctors features ends here  -->
+
+    <!-- platform info starts here  -->
+    <div class="main-content">
+        <div class="platform-info">
+            <div class="platform-title">
+                India's Largest Healthcare Platform
+            </div>
+            <div class="platform-stats">
+                <div class="stat">
+                    <h3>Visitors</h3>
+                    <p>1,000,000+</p>
+                </div>
+                <div class="stat">
+                    <h3>Cities</h3>
+                    <p>100+</p>
+                </div>
+                <div class="stat">
+                    <h3>Active Users</h3>
+                    <p>500,000+</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- platform info ends here  -->
+
+   
+    <script src="script.js"></script>
+
+    <script>
+// Sample data for doctors
+const doctors = [
+    { 
+        name: 'Dr. Smith', 
+        specialization: 'Cardiologist', 
+        workingHours: '9:00 AM - 5:00 PM',
+        contact: '123-456-7890',
+        hospital: 'City Hospital',
+        image: 'E:\SIH Hackathon Project\Front End\images'
+    },
+    { 
+        name: 'Dr. Johnson', 
+        specialization: 'Dentist', 
+        workingHours: '10:00 AM - 6:00 PM',
+        contact: '987-654-3210',
+        hospital: 'Dental Care Clinic',
+        image: 'doctor2.jpg'
+    },
+    { 
+        name: 'Dr. Brown', 
+        specialization: 'Dermatologist', 
+        workingHours: '8:00 AM - 4:00 PM',
+        contact: '555-123-4567',
+        hospital: 'Skin Health Center',
+        image: 'doctor3.jpg'
+    },
+    { 
+        name: 'Dr. fred', 
+        specialization: 'Dermatologist', 
+        workingHours: '8:00 AM - 4:00 PM',
+        contact: '555-123-4567',
+        hospital: 'Skin Health Center',
+        image: 'doctor3.jpg'
+    },
+    { 
+        name: 'Dr. joffrey', 
+        specialization: 'Dermatologist', 
+        workingHours: '8:00 AM - 4:00 PM',
+        contact: '555-123-4567',
+        hospital: 'Skin Health Center',
+        image: 'doctor3.jpg'
+    },
+    { 
+        name: 'Dr. gold', 
+        specialization: 'Dermatologist', 
+        workingHours: '8:00 AM - 4:00 PM',
+        contact: '555-123-4567',
+        hospital: 'Skin Health Center',
+        image: 'doctor3.jpg'
+    },
+    { 
+        name: 'Dr. fort', 
+        specialization: 'Dermatologist', 
+        workingHours: '8:00 AM - 4:00 PM',
+        contact: '555-123-4567',
+        hospital: 'Skin Health Center',
+        image: 'doctor3.jpg'
+    },
+    { 
+        name: 'Dr. bellfort', 
+        specialization: 'Dermatologist', 
+        workingHours: '8:00 AM - 4:00 PM',
+        contact: '555-123-4567',
+        hospital: 'Skin Health Center',
+        image: 'doctor3.jpg'
+    },
+    { 
+        name: 'Dr. joffrey', 
+        specialization: 'Dermatologist', 
+        workingHours: '8:00 AM - 4:00 PM',
+        contact: '555-123-4567',
+        hospital: 'Skin Health Center',
+        image: 'doctor3.jpg'
+    },
+    // Add more doctors here
+];
+
+const doctorList = document.querySelector('.doctor-list');
+const specializationSelect = document.getElementById('specialization');
+const searchInput = document.getElementById('searchInput');
+const filterButton = document.getElementById('filterButton');
+
+function renderDoctors(filter) {
+    let filteredDoctors = doctors;
+
+    if (filter !== 'all') {
+        filteredDoctors = doctors.filter(doctor => doctor.specialization.toLowerCase() === filter.toLowerCase());
+    }
+
+    doctorList.innerHTML = '';
+
+    filteredDoctors.forEach(doctor => {
+        const doctorCard = document.createElement('div');
+        doctorCard.classList.add('doctor-card');
+        
+        // Doctor image
+        const img = document.createElement('img');
+        img.src = doctor.image;
+        img.alt = doctor.name
+        doctorCard.appendChild(img);
+
+// Doctor name
+const name = document.createElement('h2');
+name.textContent = doctor.name;
+doctorCard.appendChild(name);
+
+// Specialist
+const specialist = document.createElement('p');
+specialist.textContent = `Specialist: ${doctor.specialization}`;
+doctorCard.appendChild(specialist);
+
+// Working hours
+const workingHours = document.createElement('p');
+workingHours.textContent = `Working Hours: ${doctor.workingHours}`;
+doctorCard.appendChild(workingHours);
+
+// Contact information
+const contact = document.createElement('p');
+contact.textContent = `Contact: ${doctor.contact}`;
+doctorCard.appendChild(contact);
+
+// Hospital name
+const hospital = document.createElement('p');
+hospital.textContent = `Hospital: ${doctor.hospital}`;
+doctorCard.appendChild(hospital);
+
+doctorList.appendChild(doctorCard);
+});
+}
+
+// Populate the filter dropdown with specialist options
+const specialistOptions = [...new Set(doctors.map(doctor => doctor.specialization))];
+specialistOptions.forEach(specialization => {
+const option = document.createElement('option');
+option.value = specialization.toLowerCase();
+option.textContent = specialization;
+specializationSelect.appendChild(option);
+});
+
+filterButton.addEventListener('click', () => {
+const selectedSpecialization = specializationSelect.value;
+renderDoctors(selectedSpecialization);
+});
+
+searchInput.addEventListener('input', () => {
+const selectedSpecialization = specializationSelect.value;
+const searchValue = searchInput.value;
+renderDoctors(selectedSpecialization);
+});
+
+renderDoctors('all'); // Initial rendering
+    </script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .banner-container {
+            width: 100%;
+            height: 300px; /* Adjust the height as needed */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-slider {
+            width: 300%; /* Three times the width of one slide to fit all slides side by side */
+            height: 100%;
+            display: flex;
+            transition: transform 0.3s ease; /* Adjust the transition duration as needed */
+        }
+
+        .image-slide {
+            width: 33.33%; /* One-third of the slider container width for each slide */
+            height: 100%;
+            flex-shrink: 0; /* Prevent slides from shrinking */
+        }
+
+        .image-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Navigation buttons (optional) */
+        .prev-btn, .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        /* category starts here  */
+        /* Reset default styles for list and anchor tags */
+        /* Reset default styles for list and anchor tags */
+ul, li, a {
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the category container */
+.category-container {
+    text-align: center;
+    padding: 20px;
+    display:flex;
+}
+.category-title{
+    /* display:flex; */
+    padding:1px;
+    margin-top:19px;
+}
+
+/* Style the heading */
+.category-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style each category box */
+.category-box {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 0 10px; /* Add spacing between the boxes (optional) */
+}
+
+/* Style the image inside the box */
+.category-box img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Add hover effect and pointer cursor */
+.category-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* Style the text label below the image */
+.category-box span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+        /* category ends here  */
+
+        /* search box starts here  */
+        .search-container {
+    text-align: center;
+    margin: 20px;
+}
+
+#medicineSearch {
+    padding: 10px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    width: 60%;
+    margin-right: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#medicineSearch::placeholder {
+    color: #ccc;
+}
+#medicineSearch:focus {
+    outline: none;
+    border-color: #ff6b6b;
+}
+
+/* css for filter  */
+.filter-container {
+    display: inline-block;
+    margin-left: 20px;
+    position: relative;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#filter {
+    padding: 10px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+#filter:focus {
+    outline: none;
+    border-color: #ff6b6b;
+}
+
+.medicine-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.medicine-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+.medicine-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.medicine-image {
+    max-width: 100px;
+    max-height: 100px;
+    margin: 0 auto;
+}
+
+.medicine-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+.medicine-price {
+    font-size: 16px;
+    color: #3498db;
+}
+.add-to-cart {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.add-to-cart:hover {
+    background-color: #ff6b6b;
+    transform: scale(1.05);
+}
+
+        /* search box ends here  */
+    </style>
+</head>
+<body>
+    <div>
+    <div class="banner-container">
+        <div class="image-slider">
+            <div class="image-slide">
+                <img src="images/ayush 2.jpg" alt="Image 1">
+            </div>
+            <div class="image-slide">
+                <img src="images/ayush banner.jpg" alt="Image 2">
+            </div>
+        </div>
+        </div>
+
+        <!-- category starts here  -->
+        <div class="category-title"><h2>Shop by Category</h2>
+        <div class="category-container">
+            <div class="category-box">
+                <a href="category1.html">
+                    <img src="images/homeopathy.png" alt="Category 1">
+                    <span>Category 1</span>
+                </a>
+            </div>
+            <div class="category-box">
+                <a href="category2.html">
+                    <img src="images/ayurvedic.png" alt="Category 2">
+                    <span>Category 2</span>
+                </a>
+            </div>
+            <div class="category-box">
+                <a href="category3.html">
+                    <img src="images/siddha.png" alt="Category 3">
+                    <span>Category 3</span>
+                </a>
+            </div>
+            <div class="category-box">
+                <a href="category4.html">
+                    <img src="images/unani.png" alt="Category 4">
+                    <span>Category 4</span>
+                </a>
+            </div>
+        </div>
+    </div>
+        <!-- category ends here  -->
+
+        <!-- search box  -->
+        <div class="search-container">
+            <input type="text" id="medicineSearch" placeholder="Search for medicines...">
+            <div class="filter-container">
+                <label for="filter">Filter by Type:</label>
+                <select id="filter">
+                    <option value="all">All</option>
+                    <option value="ayurvedic">Ayurvedic</option>
+                    <option value="homeopathy">Homeopathy</option>
+                    <option value="siddha">Siddha</option>
+                    <option value="unani">Unani</option>
+                </select>
+            </div>
+        </div>
+    
+        <div class="medicine-list" id="medicineList">
+            <!-- Medicines will be dynamically added here -->
+        </div>
+
+        <!-- search box ends here  -->
+
+        <!-- Navigation buttons (optional) -->
+        <div class="prev-btn" onclick="prevSlide()">&#10094;</div>
+        <div class="next-btn" onclick="nextSlide()">&#10095;</div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.image-slide');
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const translateX = -currentIndex * 33.33; // 33.33% per slide
+            document.querySelector('.image-slider').style.transform = `translateX(${translateX}%)`;
+        }
+
+        // Auto slide every 5 seconds
+        setInterval(nextSlide, 5000);
+
+
+        // search bar starts here 
+        document.addEventListener('DOMContentLoaded', function () {
+    const medicineSearch = document.getElementById('medicineSearch');
+    const filterSelect = document.getElementById('filter');
+    const medicineList = document.getElementById('medicineList');
+
+  // Sample medicine data with additional information
+  const medicines = [
+        { name: 'Medicine A', type: 'ayurvedic', image: 'medicine-a.jpg', price: '$10.99' },
+        { name: 'Medicine B', type: 'homeopathy', image: 'medicine-b.jpg', price: '$12.99' },
+        { name: 'Medicine C', type: 'siddha', image: 'medicine-c.jpg', price: '$9.99' },
+        { name: 'Medicine D', type: 'unani', image: 'medicine-d.jpg', price: '$11.99' },
+        // Add more medicines here
+    ];
+
+    function updateMedicineList() {
+        const searchTerm = medicineSearch.value.toLowerCase();
+        const selectedFilter = filterSelect.value;
+
+        medicineList.innerHTML = '';
+
+        medicines.forEach((medicine) => {
+            if (
+                (selectedFilter === 'all' || medicine.type === selectedFilter) &&
+                medicine.name.toLowerCase().includes(searchTerm)
+            ) {
+                const medicineBox = document.createElement('div');
+                medicineBox.className = 'medicine-box';
+                medicineBox.innerHTML = `
+                    <img src="${medicine.image}" alt="${medicine.name}" class="medicine-image">
+                    <p class="medicine-name">${medicine.name}</p>
+                    <p class="medicine-price">${medicine.price}</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                `;
+                medicineList.appendChild(medicineBox);
+            }
+        });
+    }
+
+    medicineSearch.addEventListener('input', updateMedicineList);
+    filterSelect.addEventListener('change', updateMedicineList);
+
+    // Initial update
+    updateMedicineList();
+});
+
+
+    </script>
+</body>
+</html>

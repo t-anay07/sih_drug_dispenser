@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>MediSync</title>
+    <style>
+
+:root{
+    --text-color: #30363c;
+    --main-color: rgb(31, 209, 215);
+    --shadow: rgba(600, 64, 67, 0.3) 0px 1px 2px 0px,
+    --shadow-border: rgba(0,0,0,0.02) 0px 1px 3px 0px,
+    rgba(27,31,35,0.15) 0px 0px 0px 1px;
+}
+
+/* global Css  */
+.container{
+    width: 100%;
+    padding: 11px 1%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.container > .title{
+    font-weight: 600;
+    font-size: 26px;
+    align-items: center;
+    display: flex;
+    text-transform: capitalize;
+}
+
+        /* Reset some default styles */
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the navbar */
+.navbar {
+    background-color:#e3eaf2fc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Style the logo */
+.navbar-logo img {
+    max-height: 40px;
+}
+
+/* Style the menu items */
+.navbar-menu {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-right: 20px;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: rgb(10, 3, 3);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar-menu a:hover {
+    color: #cb270a; /* Change color on hover */
+}
+
+/* Style the download app button */
+.navbar-app {
+    background-color: #ed3939fc;
+    padding: 8px 11px;
+    border-radius: 7px;
+}
+
+.download-app {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    
+}
+
+.download-app:hover {
+    background-color: #87b5e9; /* Change background color on hover */
+    transform: scale(1.05);
+}
+
+/* Search bar  */
+.search-layout{
+    /* margin-top: 29px; */
+    margin-bottom:0%;
+    padding-top:48px;
+    padding-bottom:50px;
+}
+.header-box{
+    width: 100%;
+    height: calc(100% * (9 / 16)); /* Use your desired aspect ratio */
+    /* background-color: #fffbfb; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8ecff;
+}
+.header-box img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.search-layout > div{
+    width: 70%;
+    margin-left:10%;
+    
+    /* margin: 30px auto 1px; */
+}
+
+.search-header{
+    display: flex;
+    align-items: center;
+}
+
+.search-header > h2{
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.search-header > h2 + i {
+    font-weight: auto;
+    margin-right: 8px;
+}
+
+.search-header > p{
+    margin-right: 10px;
+
+}
+
+.search-header > div{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.search-header > div > h3,
+.search-header> div > i{
+    color: var(#6abf80);
+    margin-right: 5px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.search-bar{
+    display: flex;
+    margin-top:20px;
+    /* margin: 20px 0 ; */
+    width: 100%;
+    border: 1px lightgrey;
+    border-radius: 40px;
+    padding: 4px;
+    box-sizing: border-box;
+    box-shadow: lightgrey 0 0 4px;
+    align-items: center;
+}
+
+.search-bar > i {
+    margin-left: 30px;
+}
+
+.search-bar > input[type="text"]{
+    margin: auto 20px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    width: 100%;
+}
+
+.search-bar > input[type="submit"]{
+    margin-left: auto;
+    border: none;
+    background-color: var(--main-color);
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 35px;
+    cursor: pointer;
+
+}
+
+.search-bar input::placeholder{
+    font-size: 14px;
+}
+
+/* nav card layout  */
+.nav-card-layout{
+    /* border:1px solid grey; */
+    margin:1%;
+}
+
+.nav-card-box{
+    box-shadow: 0 0 10px #777;
+}
+.nav-card-layout> .title{
+            margin-bottom: 40px;
+            width: 100;
+            box-sizing:border-box;
+            background-color: linear-gradient(to bottom,rgb(232,246,255), white);
+        }
+
+        .nav-card-layout > div:nth-child(3){
+            display:flex;
+            justify-content:space-between;
+        }
+
+        .nav-card-layout > div{
+            display: flex;
+            text-align: center;
+            gap: 25px;
+            height: 100%;
+            margin-top:0;
+            padding-top:5px;
+            /* border: 1px solid #E6EBE4; */
+            margin-bottom:0;
+            padding-left:12px;
+        }
+
+        .nav-card-layout> div > div{
+            cursor: pointer;
+        }
+
+        .nav-card-layout img{
+            width: 100%;
+            border-radius: 10px 0;
+            box-shadow: 0 0 10px rgba(32, 110, 225, 0.7);
+        }
+
+        .nav-card-layout img:hover{
+            transform: scale(1.1); /* Enlarge the image on hover */
+            transition: transform 0.2s; 
+            box-shadow: 0 0 10px rgba(27, 87, 171, 0.7);
+        }
+
+        .nav-card-layout h4{
+            font-weight: 500;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+/* nav card layout ends here  */
+
+/* banner starts here  */
+ /* Styles for the main-content section */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5; /* Background color for the main content */
+}
+
+/* Styles for the banner container */
+.banner-container {
+    display: flex;
+    justify-content: space-between; /* Space between banners */
+    margin-bottom: 20px; /* Space below the banner container */
+    padding-bottom:10px;
+}
+
+/* Styles for individual banners */
+.banner {
+    flex-basis: calc(34% - 20px); /* Three banners with space between */
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 2%;
+    background-color: #fff; /* Background color for banners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Box shadow for banners */
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height:252px;
+    /* overflow: hidden; Hide overflowing content */
+}
+
+/* Styles for banner text (paragraph) within anchor links */
+.banner a {
+    text-decoration: none; /* Remove underline from anchor links */
+}
+/* Styles for banner text (paragraph) */
+.banner p {
+    max-width: 100%; /* Set a maximum width for the text */
+    white-space: nowrap; /* Prevent text from wrapping to a new line */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add an ellipsis (...) for truncated text */
+    margin: 0; /* Remove any default margin */
+}
+
+.banner:hover {
+    transform: scale(1.05); /* Hover effect - scale up */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Hover effect - increase shadow */
+}
+
+/* Styles for banner images */
+.banner img {
+    max-width: 200%; /* Make sure images fit within the banner boxes */
+    max-height: 100%; /* Make sure images fit within the banner boxes */
+}
+
+/* banner ends here  */
+
+/* new user offer  */
+.new-user-offer > h1{
+    margin-bottom: 24px;
+}
+
+.cards-layout{
+    display: flex;
+    cursor: pointer;
+
+}
+
+.cards-layout > div{
+    width: 330px;
+    box-sizing: border-box;
+    box-shadow: rgba(0,0,0,0.02) 0px 1px 3px 0px,
+    rgba(27,31,35,0.15) 0px 0px 0px 1px;
+    display: flex;
+    padding: 10px;
+    margin-right: 30px;
+    border-radius: 7px;
+    align-items: center;
+
+}
+
+.cards-layout > div > img{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.cards-layout > div > p{
+    margin: 0 10px;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.cards-layout > div:last-child{
+    background: linear-gradient(to right, rgb(235,250,250) rgb(176,255,255) rgb(176,255,255));
+    display: block;
+    text-align: center;
+}
+
+.cards-layout > div:last-child i,
+.cards-layout > div:last-child p{
+    color: var(--main-color);
+    font-size: 15px;
+}
+
+.cards-layout > div:hover{
+    box-shadow: var(--shadow);
+}
+/* offer list ends here  */
+
+       /* Style for the main container */
+       .order-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f4f7ff;
+        }
+
+        /* Style for the first box */
+        .box1 {
+            flex: 1;
+            padding: 0px;
+            background-color: #eef4ff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center items horizontally */
+            text-align: center;
+        }
+
+        /* Style for the upload button and icon */
+        .upload-btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .pin-icon {
+            margin-right: 10px;
+        }
+
+        /* Style for the prescription image */
+        .prescription-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        /* Style for the second box */
+        /* Style for the second box */
+.box2 {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Style for the rows of steps */
+.step-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* Style for individual steps */
+.step {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Style for step numbers in colored boxes */
+.step-number {
+    width: 30px;
+    height: 30px;
+    background-color: #958ee6; 
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 20%;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+ 
+ /* Style for the main container */
+
+ .location{
+    margin:8px 0px;
+    padding: 3px;
+    background-color:#fff;
+ }
+         .location-container {
+            display: flex;
+            align-items: center;
+            margin: 10px ;
+            padding: 10px ;
+            background-color: #f4f7ff;
+
+        }
+
+        /* Style for the title */
+        .title {
+            flex: 1;
+            text-align: left;
+            font-size: 31px;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        /* Style for the map box */
+        .map-box {
+            width: 350px; /* Adjust the width as needed */
+            height: 200px; /* Adjust the height as needed */
+            background-color: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor:pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow:hidden;
+            box-shadow: 5px 5px 10px rgba(0,0,0, 0.2);
+            margin-right: 250px;
+            padding: 2px;
+        }
+
+        /* Style for the pointer icon */
+        .pointer-icon {
+            font-size: 40px;
+        }
+
+        /* Lab test starts here  */
+
+/* Lab test starts here */
+
+.Lab-categories > .title {
+    margin-bottom: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, rgb(232, 246, 255), white);
+}
+
+.Lab-categories > div:nth-child(3) {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Lab-categories > div {
+    display: flex;
+    text-align: center;
+    gap: 25px;
+    height: 100%;
+    justify-content: space-between;
+    border: 1px solid #E6EBE4;
+    padding: 39px;
+}
+
+.Lab-categories > div > div {
+    cursor: pointer;
+}
+
+/* Apply the hover effect to images only */
+.Lab-categories img {
+    width: 100%;
+    border-radius: 10px 0;
+    box-shadow: 0 0 10px #a099a1;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.Lab-categories img:hover {
+    transform: scale(1.05);
+    /* box-shadow: 0 0 10px rgba(27, 87, 171, 0.7); */
+}
+
+.Lab-categories h4 {
+    font-weight: 500;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Remove the hover effect for the whole container */
+.Lab-categories.container div:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+      /* lab test ends here  */
+
+/* CSS for the shop categories */
+.shop-categories-box {
+  display: flex;
+  justify-content: space-between; /* Distribute space between items */
+  gap: 20px; /* Add gap between items */
+}
+
+.category-item {
+  flex-basis: calc(33.33% - 20px); /* Adjust the width based on the number of items and gap */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add box shadow */
+  padding: 10px; /* Add padding to the category items */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transition effect */
+  width: 150px;
+  height: 200px;
+}
+
+.category-item img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.category-item:hover {
+  transform: translateY(-5px); /* Hover effect - move the item up slightly */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Change box shadow on hover */
+}
+
+/* Optional: Center align text within category items */
+.category-item h4 {
+  text-align: center;
+}
+
+/* Optional: Style the arrow navigation */
+.slider-arrow {
+  text-align: center;
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.arrow {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Optional: Style the title */
+.title {
+  text-align: center;
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+
+/* Styles for the slider arrow */
+.slider-arrow {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.arrow {
+    font-size: 24px;
+    margin: 0 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Additional styles for active category item */
+.active-category {
+    border: 2px solid #007bff; /* You can change the border color as needed */
+}
+
+ /* shop categories ends here  */
+
+ /* become a plus member  */
+ .become-plus-member{
+    cursor:pointer;
+    padding: 0px 5%;
+    background: linear-gradient(to right, blueviolet,rgb(81,26,233), blueviolet);
+    width:100%;
+    display:flex;
+    box-sizing: border-box;
+    gap: 40px;
+ }
+
+ .become-plus-member img{
+    height: 140px;
+    margin: 0;
+    margin-top:auto;
+ }
+
+ .become-plus-member > div:nth-child(1){
+    min-width: max-content;
+    padding-top:10px;
+ }
+
+ .become-plus-member > div:nth-child(1) > h2{
+    font-size: 25px;
+    color:#ffffff;
+ }
+
+ .become-plus-member > div:nth-child(1) > h2 > span,
+ .become-plus-member > div:nth-child(1) > h2 > span > i{
+    color: rgb(255,174,0);
+ }
+.become-plus-member > div:nth-child(1) > p{
+    margin-top: 15px;
+    color: rgb(221,221,221);
+}
+
+.become-plus-member > div:nth-child(1) > hr{
+    margin-top:20px;
+    background:linear-gradient(to right, rgb(255,174,0), rgb(0,0,0,0));
+    height: 2px;
+    border: none;
+}
+
+.become-plus-member > div:nth-child(2) > p{
+    color: #ffffff;
+    font-size:16px;
+    font-weight:300;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.become-plus-member > div:nth-child(2) > button{
+    margin-top:10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: rgb(255,174,0);
+    color:white;
+    font-weight: 600;
+    border:none;
+    align-items: center;
+    cursor: pointer;
+}
+.become-plus-member > div:nth-child(2) > button i {
+    color: rgb(255,174,0);
+    margin-left:10px;
+    border-radius:20px;
+    padding: 3px 6px;
+    font-size: 13px;
+    background-color: white;
+}
+
+
+ /* services  */
+/* Services container styling */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    margin-top:2px;
+    background-color: rgb(254, 238, 238);
+}
+
+/* Service card styling */
+/* Custom heading styling */
+.services-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.custom-heading {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333; /* Change the color as needed */
+}
+.service {
+    width: 64%;
+    max-width: 400px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+}
+
+/* Icon styling */
+.service i {
+    font-size: 48px;
+    color: #007bff; /* Change the color as needed */
+}
+
+/* Title styling */
+.service h3 {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #333; /* Change the color as needed */
+}
+
+/* Description styling */
+.service p {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #777; /* Change the color as needed */
+}
+
+/* Section heading styling */
+.section-heading {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 20px;
+    color: #333; /* Change the color as needed */
+}
+ /* services ends here  */
+
+        /* footer  */
+        .footer{
+            background-color:rgb(234,241,255);
+            padding-bottom: 60px;
+        }
+
+        .footer-top{
+            display: flex;
+            justify-content:space-between;
+        }
+
+        .footer-top > div ul{
+            list-style:none;
+
+        }
+        .footer h3{
+            font-size:18px;
+            font-weight: 600;
+            margin: 30px 0;
+
+        }
+
+        .footer > div >li{
+            font-size: 15px;
+            margin: 13px 0;
+            cursor: pointer;
+        }
+
+        .footer-top > div:last-child h3{
+            margin-bottom: 20px;
+        }
+
+        .footer-top > div:last-child li{
+            display: inline;
+            margin-right: 12px;
+        }
+
+        .footer-top > div:last-child img{
+            width: 30px;
+        }
+
+        .footer-bottom{
+            margin-top: 50px;
+        }
+
+        .footer-bottom>div{
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .footer-bottom>div>div{
+            margin-right: 10px;
+            align-items: center;
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom img{
+            height: 20px;
+        }
+
+        .footer-bottom > div p{
+            margin-left: auto;
+            min-width: max-content;
+            font-size: 15; 
+        }
+
+     
+
+
+
+    </style>
+
+
+
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="images/logo screenshot_preview_rev_1.png" alt="MediSync">
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="doctor appointment.html">Appointment</a></li>
+            <li><a href="#">Sign In</a></li>
+            <!-- <li><a href="#">Offers</a></li> -->
+            <li><a href="#">Ayush Medicines</a></li>
+            <li><a href="#">Blood Bank</a></li>
+        </ul>
+        <div class="navbar-app">
+            <a href="#" class="download-app">Download App</a>
+        </div>
+    </nav>
+    <!-- header banner starts here  -->
+     <div class="header-box">
+        <img src="images/banner poster 2.png" alt="">
+     <!-- <div class="search-layout">
+        <div class="search-layout-bar">
+            <div class="search-header"></div>
+            <h2>Book an appointment</h2>
+            <i class="fa-solid fa-clipboard-list"></i>
+            <p>We are here for your care 24/7</p>
+    <div>
+       <h3>Any help just call us</h3>
+       <i class="fa-solid fa-angle-right"></i>
+    </div>
+</div> -->
+</div>
+<!-- header banner ends here  -->
+
+<!-- search bar starts here  -->
+</div>
+    <form action="#" class="search-bar">
+    <i class="fa solid fa-magnifying-glass"></i>
+        <input type="text" name="#" placeholder="Search for medicine" id="#">
+        <input type="submit" value="Search">
+    </form>
+
+
+  <!-- search bar end  -->
+
+  <!-- nav card layout starts  -->
+<div class="nav-card-layout "><span><h3>Health Condition</h3> </span>
+    <div class="nav-card-block">
+        <div>
+            <img src="images/derma care.webp" alt="">
+            <h4>Derma Care</h4>
+            <p></p>
+        </div>
+        <div>
+            <img src="images/eye care.webp" alt="">
+            <h4>Eye Care</h4>
+            <p></p>
+        </div>
+        <div>
+            <img src="images/heart care.webp" alt="">
+            <h4>Heart Care</h4>
+            <p></p>
+        </div>
+        <div>
+            <img src="images/joint pain care.webp" alt="">
+            <h4>Joint pain care</h4>
+            <p></p>
+        </div>
+        <div>
+            <img src="images/liver care.webp" alt="">
+            <h4>Liver Care</h4>
+            <p></p>
+        </div>
+        <div>
+            <img src="images/respiratory care.webp" alt="">
+            <h4>Respiratory Care</h4>
+            <p></p>
+        </div>
+        <div>
+            <img src="" alt="">
+            <h4></h4>
+            <p></p>
+        </div>
+    </div>
+</div>
+
+
+
+
+  <!-- nav card layout ends  -->
+
+  <!-- banner start  -->
+  <div class="banner-content">
+    <!-- Banner Container -->
+    <div class="banner-container">
+        <div class="banner" id="doctor">
+            <a href="doctor appointment.html">
+                <img src="images/doctor banner 2.avif" alt="Doctor">
+                <p>Doctor</p>
+            </a>
+        </div>
+        <div class="banner" id="medicine">
+            <a href="ayush medicines.html">
+                <img src="images/Medicine 2.avif" alt="Medicine">
+                <p>Medicine</p>
+            </a>
+        </div>
+        <div class="banner" id="emergency">
+            <a href="emergency-link.html">
+                <img src="images/emergency 3.avif" alt="Emergency">
+                <p>Emergency</p>
+            </a>
+        </div>
+    </div>
+  <!-- banner ends  -->
+
+ <!-- new offer starts here  -->
+ <div class="new-user-offer container">
+    <h1 class="title">Offers Just For You</h1>
+    <div class="cards-layout">
+        <div>
+            <img src="images/20% off.jpeg" alt="">
+            <p>Flat 25% off</p>
+        </div>
+        <div>
+            <img src="images/20% off 2.jpeg" alt="">
+            <p>Test - Flat 20% Off + up to Rs.1000 surprise cashback</p>
+        </div>
+        <div>
+            <i class="fa-solid fa-lock"></i>
+            <p>Log in to view more offers</p>
+        </div>
+    </div>
+ </div>
+
+ <!-- new offers ends here  --> 
+
+
+
+ <div class="order-container">
+    <!-- First Box -->
+    <div class="box1">
+        <h2>Order with Prescription</h2>
+        <span><p>Upload prescription and we will deliver your medicines</p></span>
+        <button class="upload-btn"><span class="pin-icon">📌</span> Upload Prescription</button>
+        <img class="prescription-image" src="images/prescription.svg" alt="Prescription Example">
+    </div>
+
+    <!-- Second Box -->
+    <div class="box2">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step-row">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <p>Click the "Upload Prescription" button above.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <p>Select your prescription image from your device.</p>
+                </div>
+            </div>
+            <div class="step-row">
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <p>Review your prescription details.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <p>Confirm your order and checkout.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Map Container -->
+<div class="location">
+<div class="location-container">
+    <div class="title">Get the Nearest Location of the Hospital</div>
+    <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">
+        <div class="map-box">
+            <img src="images/gps map 2.jpeg" alt="">
+            <span> <ion-icon name="location-outline"></ion-icon></span>
+        </div>
+    </a>
+</div>
+</div>
+
+<!-- Lab Tests starts here  -->
+<div class="Lab-categories container">
+    <h1 class="title">Lab Tests by Health Concern</h1>
+    <div>
+        <div>
+            <img src="images/full body check up.png" alt="">
+            
+        </div>
+        <div>
+            <img src="images/diabetes 2.png" alt="">
+            
+        </div>
+        <div>
+            <img src="images/women care.png" alt="">
+            
+        </div>
+        <div>
+            <img src="images/covid care.png" alt="">
+            
+        </div>
+        <div>
+            <img src="images/vitammins.png" alt="">
+            
+        </div>
+        <div>
+            <img src="images/fever and infection.png" alt="">
+            
+        </div>
+        <div>
+            <img src="images/thyroid.png" alt="">
+            
+        </div>
+        <div>
+            <img src="images/bone health.png" alt="">
+            
+        </div>
+
+    </div>
+</div>
+<!--Lab Tests ends here  -->
+
+<!-- shop categories starts here  -->
+
+<div class="shop-categories container">
+    <h1 class="title">Shop by Categories</h1>
+</div>
+<div class="shop-categories-box">
+    <div class="category-item">
+        <img src="images/products.webp" alt="">
+        <h4>Products</h4>
+    </div>
+    <div class="category-item">
+        <img src="images/baby care.webp" alt="">
+        <h4>Baby Care</h4>
+    </div>
+    <div class="category-item">
+        <img src="images/protein drinks.webp" alt="">
+        <h4>Protein Powder & Drinks</h4>
+    </div>
+    <div class="category-item">
+        <img src="images/glucometer strips.webp" alt="">
+        <h4>Glucometer & Test Strips</h4>
+    </div>
+    <div class="category-item">
+        <img src="images/health drinks.webp" alt="">
+        <h4>Health Drinks</h4>
+    </div>
+    <div class="category-item">
+        <img src="images/ayurveda.webp" alt="">
+        <h4>Ayurveda</h4>
+    </div>
+    <div class="category-item">
+        <img src="images/personal care.webp" alt="">
+        <h4>Personal Care</h4>
+    </div>
+    <div class="category-item">
+        <img src="images/health devices.webp" alt="">
+        <h4>Health Devices</h4>
+    </div>
+    
+    <!-- Add more category items as needed -->
+</div>
+<div class="slider-arrow">
+    <span id="prevSlide" class="arrow">&#8249;</span>
+    <span id="nextSlide" class="arrow">&#8250;</span>
+</div>
+<!-- shop categories ends here -->
+
+<!-- shop categories ends here  -->
+
+<!-- plus member  -->
+<div class="become-plus-member">
+    <div>
+        <h2>Become a <span><i class="fa-solid fa-plus"></i>Plus</span>member</h2>
+        <p>And enjoy extra bachat on every order</p>
+        <hr>
+    </div>
+    <dir>
+        <p>Save Flat 5% extra on medication &enjoy Free Delievery with Plus Membership</p>
+        <button>Explore Now <i class="fa-solid fa-angle-right"></i></button>
+    </dir>
+    <div>
+        <img src="images/PlusFamily.22677720.png" alt="">
+    </div>
+</div>
+
+<!-- our services starts here  -->
+<div class="services-container">
+    <div class="services-heading">
+        <div class="custom-heading">Our Services</div>
+    </div>
+    <div class="service">
+        <i class="fas fa-stethoscope"></i>
+        <h3>Virtual Consultancy</h3>
+        <p>Consult with experienced doctors online from the comfort of your home.</p>
+    </div>
+    <div class="service">
+        <i class="fas fa-file-prescription"></i>
+        <h3>E-Prescription Generation</h3>
+        <p>Get your prescriptions electronically generated for easy access and sharing.</p>
+    </div>
+    <div class="service">
+        <i class="fas fa-medkit"></i>
+        <h3>Online Pharmacy</h3>
+        <p>Order your medications and healthcare products online for added convenience.</p>
+    </div>
+    <div class="service">
+        <i class="fas fa-qrcode"></i>
+        <h3>QR-Based E-Prescriptions</h3>
+        <p>Download prescriptions as QR codes for quick and secure access at the drug dispenser machine.</p>
+    </div>
+</div>
+
+<!-- our services ends here  -->
+
+
+<!-- footer start here  -->
+<footer>
+    <div class="footer container">
+        <div class="footer-top">
+            <div>
+                <ul>
+                    <h3>Company</h3>
+                    <li>About Us</li>
+                    <li>Carrers</li>
+                    <li>Blog</li>
+                    <li>Partner with MediSync</li>
+                    <li>Sell at MediSync</li>
+                </ul>
+                <ul>
+                    <h3>Our Services</h3>
+                    <li>Order Machines</li>
+                    <li>Healthcare Products</li>
+                    <li>Lab Tests</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <h3>Featured Categories</h3>
+                    <li>Essentials</li>
+                    <li>Blood Bank</li>
+                    <li>Ayurvedic Care</li>
+                    <li>Skin Care</li>
+                    <li>Wellness</li>
+                    <li>Fitness and Supplements</li>
+                    <li>Mother and Baby Care</li>
+                    <li>Healthcare Devices</li>
+                    <li>Health Condition</li>
+                    <li>Diabetiic Care</li>
+                    <li>Elderly Care</li>
+                    <li>Accessories And Wearables</li>
+                    <li>Value Store</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <h3>Need Help</h3>
+                    <li>Browse All Medicines</li>
+                    <li>Browse All Doctors</li>
+                    <li>Browse All Cities and Areas</li>
+                    <li>Browse All Stores</li>
+                    <li>FAQs</li>
+                </ul>
+                <ul>
+                    <h3>Policy Info</h3>
+                    <li>Health</li>
+                    <li>Insurance</li>
+                    <li>Terms and Condition</li>
+                    <li>Customer Support Policy</li>
+                    <li></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <h3>Follow us on</h3>
+                    <div><li><img src="images/instagram logo.png" alt=""></li></div>
+                    <div><li><img src="images/facebook logo.png" alt=""></li></div>
+                    <div><li><img src="images/twitter logo.png" alt=""></li></div>
+                    <div><li><img src="images/youtube logo.png" alt=""></li></div>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <h3>Our Payment Partners</h3>
+            <div>
+                <div>
+                    <img src="images/gpay.png" alt="">
+                    <img src="images/paytm.png" alt="">
+                    <img src="images/phonepe.png" alt="">
+                    <img src="images/amazon.png" alt="">
+                    <img src="images/mastercard.png" alt="">
+                    <img src="images/visa.png" alt="">
+                    <img src="images/rupay.png" alt="">
+                </div>
+            </div>
+
+            <p>&copy;MediSync. All Rights Reserved</p>
+        </div>
+    </div>
+</footer>
+ 
+<!-- footer ends here  -->
+
+<script>
+
+
+
+    // Initialize and display the map
+    function initMap() {
+        // GPS Coordinates (Latitude and Longitude)
+        var latitude = 37.7749; // Replace with your desired latitude
+        var longitude = -122.4194; // Replace with your desired longitude
+
+        // Create a map centered at the specified coordinates
+        var map = new google.maps.Map(document.getElementById('map-container'), {
+            center: { lat: latitude, lng: longitude },
+            zoom: 15 // Adjust the zoom level as needed
+        });
+
+        // Add a marker for the GPS coordinates
+        var marker = new google.maps.Marker({
+            position: { lat: latitude, lng: longitude },
+            map: map,
+            title: 'Your Location'
+        });
+
+        // Event listener for the "Get Location of Nearest Hospital" button
+        document.getElementById('get-hospital-button').addEventListener('click', function () {
+            // Add code here to find and display the location of the nearest hospital
+            alert('Fetching nearest hospital location...');
+        });
+    }
+</script>
+
+<!-- Include the Google Maps JavaScript API -->
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+</script>
+</body>
+</html>
